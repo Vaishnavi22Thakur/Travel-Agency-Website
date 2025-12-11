@@ -1,0 +1,134 @@
+<html>
+<head>
+<script language="Javascript">
+function booking(){
+    var FullName,Email,Phoneno,People,TravelDate,Destination,Gender;
+    FullName=document.book.bname.value;
+    Email=document.book.bemail.value;
+    Phoneno=document.book.bnum.value;
+    People=document.book.btravellers.value;
+    TravelDate=document.book.btravel.value;
+    Destination=document.book.bdestination.value;
+    Gender=document.book.bgender.value;
+    if(FullName=="" || Email=="" || Phoneno=="" || People=="" || TravelDate=="" || Destination=="" || Gender==""){
+        alert("Enter all the fields");
+        return false;
+    }
+    if(isNaN(Phoneno)){
+        alert("Enter mobile number in numbers only");
+        return false;
+    }
+    if(Phoneno.length!=10){
+        alert("Enter 10 digit mobile number");
+        return false;
+    }
+    alert("Congratulations! Your trip has been booked.");
+    return true;
+}
+</script>
+<style>
+body{
+background-image:url("port.jpg");
+background-size:cover;
+background-repeat:no-repeat;
+display:flex;
+justify-content:center;
+align-items:flex-start;;
+padding:30px 50px;
+}
+.head{
+border:2px solid black;
+border-radius:15px;
+width:50%;
+height:100%;
+text-align:center;
+font-family:poppins;
+backdrop-filter:blur(20px);
+padding:30px 40px;
+}
+.box{
+background-image:url("book.jpg");
+background-size:cover;
+background-repeat:no-repeat;
+display:flex;
+justify-content:center;
+align-items:center;
+border:0px white;
+border-radius:20px;
+width:1250px;
+height:auto;
+}
+input, select {
+    display:block;
+    margin:8px auto;
+}
+.row {
+display: flex;
+justify-content: space-between;
+align-items:center;
+width:70%;
+margin:10px auto;
+}
+.row label,
+.row select{
+width:55%;
+text-align: left;
+font-size:18px;
+font-weight:500;
+}
+.row label{
+width:40%;
+padding:5px;
+border-radius:5px;
+border:1px solid #555;
+}
+</style>
+</head>
+<body>
+<div class="box">
+    <div class="head">
+        <h1>WELCOME!</h1>
+        <h3>Please fill the following details for your booking</h3>
+            <form name="book">
+            <div class="row">
+        	<label>Full name:</label>
+        	<input type="text" name="bname">
+    	    </div>
+    	<div class="row">
+            <label>E-mail:</label>
+            <input type="email" name="bemail">
+    	</div>
+    	<div class="row">
+            <label>Phone No:</label>
+            <input type="text" name="bnum">
+    	</div>
+        <div class="row">
+    	    <label>Gender:</label>
+    	    <select name="bgender"><option>Male</option><option>Female</option><option>Others</option></select>
+        </div>
+    	<div class="row">
+            <label>Destination:</label>
+            <input type="text" name="bdestination">
+    	</div>
+        <div class="row">
+            <label>No. of People:</label>
+            <input type="text" name="btravellers">
+        </div>
+        <div class="row">
+            <label>Travel Date:</label>
+            <input type="date" name="btravel">
+        </div>
+        <div class="row">
+            <label>Payment Method:</label>
+            <select>
+                <option>UPI</option>
+                <option>Debit Card</option>
+                <option>Credit Card</option>
+                <option>Net Banking</option><br>
+            </select><br>
+        </div>
+        <input type="button" value="BOOK" onclick="if(booking())window.location.href='home.html'" style="font-weight:bold; color:purple; background-color:white; border-radius:10px; font-size:20px; width:25%; height:10%"; name="booked"></form>
+    </div>
+</div>
+</body>
+</html>    

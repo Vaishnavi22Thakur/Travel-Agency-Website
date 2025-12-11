@@ -1,0 +1,61 @@
+<html>
+<head>
+<script language="Javascript">
+function log(){
+    var email,pass;
+    email=document.login.email.value;
+    pass=document.login.pass.value;
+    if(email=="" || pass==""){
+        alert("Enter all the fields");
+        return false;
+    }
+    alert("Login successful");
+    return true;
+}
+</script>
+<style>
+body{
+background-image:url("port.jpg");
+background-size:cover;
+background-repeat:no-repeat;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+.box{
+background-image:url("log.jpg");
+background-size:cover;
+background-repeat:no-repeat;
+display:flex;
+justify-content:center;
+align-items:center;
+border:0px white;
+border-radius:20px;
+width:1250px;
+height:550px;
+}
+.box1{
+border:2px solid black;
+border-radius:15px;
+width:35%;
+height:75%;
+backdrop-filter:blur(15px);             
+}
+</style>
+</head>
+<body>
+<div class="box">
+    <div class="box1">
+        <h1 style="text-align:center">LOGIN</h1><br><br><br>
+        <form name="login" style="text-align:center">
+        E-mail:<input type="email" name="email" style="font-size:15px"><br><br><br>
+        Password:<input type="password" name="pass" style="font-size:15px"><br><br><br>
+        <button type="button" onclick="if(log())window.location.href='home.html'" style="border-radius:10px; font-size:20px; color:purple; background-color:white">Submit</button><br>
+        <p style="font-size:20px; font-weight:bold">Don't have an account?
+        <a href="sign.html" style="text-align:center;">Sign up</a><br><br>
+        <a href="forgot.html" style="text-align:center;">Forgot Password?</a>
+        </form>
+     </div>
+</div>
+</body>
+</html>
