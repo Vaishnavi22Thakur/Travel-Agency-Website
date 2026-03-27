@@ -1,12 +1,12 @@
 # 🌍 Travel Agency Website
 
-A modern and responsive travel agency website that allows users to explore destinations and book their trips through a clean and attractive interface.
+A modern and responsive travel agency website that allows users to explore beautiful destinations and book their trips through a simple and attractive interface.
 
 ---
 
 ## 📸 Preview
 
-![Screenshot](images/screenshot1.png)
+images/screenshot1.png
 
 ---
 
@@ -15,9 +15,9 @@ A modern and responsive travel agency website that allows users to explore desti
 - 🌍 Destinations section with multiple travel images  
 - 🖼️ Attractive image gallery showcasing places  
 - 📝 Booking section for users to plan their trips  
-- 🔍 Simple and user-friendly navigation  
+- 🔍 Clean and easy navigation  
 - 📱 Fully responsive design  
-- 🎨 Clean and modern UI  
+- 🎨 Modern and user-friendly UI  
 
 ---
 
@@ -31,18 +31,26 @@ A modern and responsive travel agency website that allows users to explore desti
 
 ## 📁 Project Structure
 
-Travel-Agency-Website/
-│── index.html  
-│── book.html  
-│── destinations.html  
-│── login1.html  
-│── sign.html  
-│── forgot.html  
-│── images/  
-│── README.md  
+travel-agency/
+│── index.html
+│── style.css
+│── script.js
+│── images/
+│── README.md
 
 ---
 
-## ⚙️ Setup Instructions
+## 🌐 Live Demo
 
-1. Clone the repository:
+https://vaishnavi22thakur.github.io/Travel-Agency-Website/
+
+---
+
+## 📌 Future Improvements
+
+- 🗺️ Add interactive maps  
+- 💳 Add real booking system  
+- ⭐ Add user reviews  
+- 🎥 Add animations and transitions  
+
+---
