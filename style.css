@@ -1,0 +1,7 @@
+.box{
+border:3px;
+border-radius:10px;
+background-image:url("travel.jpg");
+background-size:cover;
+background-repeat:no-repeat;
+}
