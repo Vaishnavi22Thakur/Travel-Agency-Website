@@ -1,59 +1,143 @@
+<!DOCTYPE html>
 <html>
 <head>
-<script language="Javascript">
+<title>Reset Password</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Poppins, sans-serif;
+}
+
+body{
+  background:url("images/port.jpg") no-repeat center/cover;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.box{
+  width:90%;
+  max-width:900px;
+  background:url("images/pass.jpg") no-repeat center/cover;
+  border-radius:20px;
+  padding:40px 20px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.box1{
+  width:100%;
+  max-width:350px;
+  padding:30px;
+  border-radius:15px;
+  backdrop-filter:blur(20px);
+  background:rgba(255,255,255,0.2);
+}
+
+h1{
+  text-align:center;
+  margin-bottom:20px;
+}
+
+input{
+  width:100%;
+  padding:10px;
+  margin-top:5px;
+  margin-bottom:15px;
+  border-radius:8px;
+  border:none;
+  outline:none;
+}
+
+button{
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:10px;
+  font-size:16px;
+  background:white;
+  color:purple;
+  cursor:pointer;
+}
+
+button:hover{
+  background:purple;
+  color:white;
+}
+
+a{
+  display:block;
+  text-align:center;
+  margin-top:15px;
+  color:blue;
+  text-decoration:none;
+}
+
+@media(max-width:600px){
+  .box{
+    padding:20px;
+  }
+}
+</style>
+
+<script>
 function passw(){
-    var npass,cpass;
-    npass=document.pass.npass.value;
-    cpass=document.pass.cpass.value;
-    if(npass=="" || cpass==""){
+    const npass = document.forms["pass"]["npass"].value.trim();
+    const cpass = document.forms["pass"]["cpass"].value.trim();
+
+    if(!npass || !cpass){
         alert("Enter all the fields");
         return false;
     }
-    alert("Password changed successful");
+
+    if(npass.length < 6){
+        alert("Password must be at least 6 characters");
+        return false;
+    }
+
+    if(npass !== cpass){
+        alert("Passwords do not match");
+        return false;
+    }
+
+    alert("Password changed successfully!");
+    window.location.href = "login1.html";
     return true;
 }
 </script>
-<style>
-body{
-background-image:url("images/port.jpg");
-background-size:cover;
-background-repeat:no-repeat;
-display:flex;
-justify-content:center;
-align-items:center;
-}
-.box{
-background-image:url("images/pass.jpg");
-background-size:cover;
-background-repeat:no-repeat;
-display:flex;
-justify-content:center;
-align-items:center;
-border:0px white;
-border-radius:20px;
-width:1250px;
-height:550px;
-}
-.box1{
-border:2px solid black;
-border-radius:15px;
-width:35%;
-height:70%;
-backdrop-filter:blur(15px);             
-}
-</style>
+
 </head>
+
 <body>
+
 <div class="box">
-    <div class="box1">
-        <h1 style="text-align:center">PASSWORD</h1><br><br><br>
-        <form name="pass" style="text-align:center">
-        New Password:<input type="password" name="npass" style="font-size:15px"><br><br><br>
-        Confirm Password:<input type="password" name="cpass" style="font-size:15px"><br><br><br>
-        <button type="button" onclick="if(passw())window.location.href='index.html'" style="border-radius:10px; font-size:20px; color:purple; background-color:white">Submit</button><br><br>
-        <a href="login1.html" style="text-align:center; font-size:20px">Login</a><br><br>
-        </form>
-     </div>
+  <div class="box1">
+
+    <h1>Reset Password</h1>
+
+    <form name="pass" onsubmit="return passw()">
+
+      New Password:
+      <input type="password" name="npass" placeholder="Enter new password">
+
+      Confirm Password:
+      <input type="password" name="cpass" placeholder="Confirm password">
+
+      <button type="submit">Submit</button>
+
+      <a href="login1.html">Back to Login</a>
+
+    </form>
+
+  </div>
 </div>
+
 </body>
 </html>
