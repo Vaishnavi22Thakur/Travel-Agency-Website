@@ -6,7 +6,7 @@ A modern and responsive travel agency website that allows users to explore beaut
 
 ## 📸 Preview
 
-images/travel.png
+images/screenshot.png
 
 ---
 
