@@ -1,169 +1,193 @@
+<!DOCTYPE html>
 <html>
 <head>
+<title>Destinations</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Poppins, sans-serif;
+}
+
 body{
-background-image:url("images/port.jpg");
-background-size:cover;
-background-repeat:no-repeat;
-margin-top:45px;
-margin-left:50px;
+  background:url("images/port.jpg") no-repeat center/cover;
 }
-.box1{
-background-image:url("images/bali.jpg");
-background-size:cover;
-background-repeat:no-repeat;
-margin-top:50px;
-width:375px;
-height:250px;
-border:0px white;
-border-radius:20px;
-margin-left:30px;
+
+h1{
+  text-align:center;
+  font-size:40px;
+  margin:30px 10px;
 }
-.box2{
-background-image:url("images/rome.jpg");
-background-size:cover;
-background-repeat:no-repeat;
-margin-top:-430px;
-width:375px;
-height:250px;
-border:0px white;
-border-radius:20px;
-margin-left:450px;
+
+.container{
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  gap:20px;
+  padding:20px;
 }
-.box3{
-background-image:url("images/kerala.jpg");
-background-size:cover;
-background-repeat:no-repeat;
-margin-top:-430px;
-width:370px;
-height:250px;
-border:0px white;
-border-radius:20px;
-margin-left:870px;
+
+.card{
+  background:white;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
 }
-.box4{
-background-image:url("images/tokyo.jpg");
-background-size:cover;
-background-repeat:no-repeat;
-margin-top:50px;
-width:375px;
-height:250px;
-border:0px white;
-border-radius:20px;
-margin-left:30px;
+
+.card-img{
+  height:200px;
+  background-size:cover;
+  background-position:center;
 }
-.box5{
-background-image:url("images/thailand.jpg");
-background-size:cover;
-background-repeat:no-repeat;
-margin-top:-430px;
-width:375px;
-height:250px;
-border:0px white;
-border-radius:20px;
-margin-left:450px;
+
+.card-content{
+  padding:15px;
 }
-.box6{
-background-image:url("images/dubai.jpg");
-background-size:cover;
-background-repeat:no-repeat;
-margin-top:-430px;
-width:375px;
-height:250px;
-border:0px white;
-border-radius:20px;
-margin-left:870px;
+
+.card-content h3{
+  color:brown;
 }
-.box7{
-background-image:url("images/goa.jpg");
-background-size:cover;
-background-repeat:no-repeat;
-margin-top:50px;
-width:375px;
-height:250px;
-border:0px white;
-border-radius:20px;
-margin-left:30px;
+
+.card-content p{
+  font-size:14px;
 }
-.box8{
-background-image:url("images/france.jpg");
-background-size:cover;
-background-repeat:no-repeat;
-margin-top:-430px;
-width:375px;
-height:250px;
-border:0px white;
-border-radius:20px;
-margin-left:450px;
+
+.btn{
+  margin-top:10px;
+  background:teal;
+  color:white;
+  border:none;
+  padding:10px;
+  width:100%;
+  border-radius:10px;
+  font-size:16px;
+  cursor:pointer;
 }
-.box9{
-background-image:url("images/spain.jpg");
-background-size:cover;
-background-repeat:no-repeat;
-margin-top:-430px;
-width:375px;
-height:250px;
-border:0px white;
-border-radius:20px;
-margin-left:870px;
+
+.card:hover{
+  transform:scale(1.05);
+  transition:0.3s;
+}
+
+@media(max-width:1024px){
+  .container{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:768px){
+  .container{
+    grid-template-columns:1fr;
+  }
+
+  h1{
+    font-size:28px;
+  }
 }
 </style>
+
 </head>
+
 <body>
-<h1 style="text-align:center; font-size:60px; font-family:poppins">YOUR DREAM DESTINATIONS</h1>
-<div class="box1">
+
+<h1>YOUR DREAM DESTINATIONS</h1>
+
+<div class="container">
+
+  <div class="card">
+    <div class="card-img" style="background-image:url('images/bali.jpg')"></div>
+    <div class="card-content">
+      <p>Bali, Indonesia</p>
+      <h3>Bali</h3>
+      <p>Island of Gods</p>
+      <button class="btn">$500/person - View Details</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-img" style="background-image:url('images/rome.jpg')"></div>
+    <div class="card-content">
+      <p>Rome, Italy</p>
+      <h3>Rome</h3>
+      <p>Capital of Italy</p>
+      <button class="btn">$600/person - View Details</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-img" style="background-image:url('images/kerala.jpg')"></div>
+    <div class="card-content">
+      <p>Kerala, India</p>
+      <h3>Kerala</h3>
+      <p>God's Own Country</p>
+      <button class="btn">$550/person - View Details</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-img" style="background-image:url('images/tokyo.jpg')"></div>
+    <div class="card-content">
+      <p>Tokyo, Japan</p>
+      <h3>Tokyo</h3>
+      <p>Capital of Japan</p>
+      <button class="btn">$550/person - View Details</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-img" style="background-image:url('images/thailand.jpg')"></div>
+    <div class="card-content">
+      <p>Thailand</p>
+      <h3>Thailand</h3>
+      <p>Land of Smiles</p>
+      <button class="btn">$550/person - View Details</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-img" style="background-image:url('images/dubai.jpg')"></div>
+    <div class="card-content">
+      <p>Dubai</p>
+      <h3>Dubai</h3>
+      <p>City of Gold</p>
+      <button class="btn">$550/person - View Details</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-img" style="background-image:url('images/goa.jpg')"></div>
+    <div class="card-content">
+      <p>Goa, India</p>
+      <h3>Goa</h3>
+      <p>Party Capital of India</p>
+      <button class="btn">$550/person - View Details</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-img" style="background-image:url('images/france.jpg')"></div>
+    <div class="card-content">
+      <p>France</p>
+      <h3>France</h3>
+      <p>The Hexagon</p>
+      <button class="btn">$550/person - View Details</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-img" style="background-image:url('images/spain.jpg')"></div>
+    <div class="card-content">
+      <p>Spain</p>
+      <h3>Spain</h3>
+      <p>Kingdom of Spain</p>
+      <button class="btn">$550/person - View Details</button>
+    </div>
+  </div>
+
 </div>
-<p style="font-family:arial; font-size:15px; margin-left:50px; color:black">Bali, Indonesia</p>
-<p style="font-family:arial; font-size:20px; margin-left:50px; font-weight:bold; color:brown">Bali</p>
-<p style="font-family:arial; font-size:15px; margin-left:50px; color:black">Island of Gods</p>
-<button type="button" style="margin-left:40px; border-radius:15px; font-size:25px; padding: 10px 20px; color:white; background-color:teal;">$500/person&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View Details></button>
-<div class="box2">
-</div>
-<p style="font-family:arial; font-size:15px; margin-left:475px; color:black">Rome, Italy</p>
-<p style="font-family:arial; font-size:20px; margin-left:475px; font-weight:bold; color:brown">Rome</p>
-<p style="font-family:arial; font-size:15px; margin-left:475px; color:black">Capital and Largest City of Italy</p>
-<button type="button" style="margin-left:455px; border-radius:15px; font-size:25px; padding: 10px 20px; color:white; background-color:teal;">$600/person&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View Details></button>
-<div class="box3">
-</div>
-<p style="font-family:arial; font-size:15px; margin-left:890px; color:black">Kerala, India</p>
-<p style="font-family:arial; font-size:20px; margin-left:890px; font-weight:bold; color:brown">Kerala</p>
-<p style="font-family:arial; font-size:15px; margin-left:890px; color:black">God's Own Country and Spice Garden of India</p>
-<button type="button" style="margin-left:870px; border-radius:15px; font-size:25px; padding: 10px 20px; color:white; background-color:teal; ">$550/person&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View Details></button>
-<div class="box4">
-</div>
-<p style="font-family:arial; font-size:15px; margin-left:50px; color:black">Tokyo, Japan</p>
-<p style="font-family:arial; font-size:20px; margin-left:50px; font-weight:bold; color:brown">Tokyo</p>
-<p style="font-family:arial; font-size:15px; margin-left:50px; color:black">Capital of Japan</p>
-<button type="button" style="margin-left:40px; border-radius:15px; font-size:25px; padding: 10px 20px; color:white; background-color:teal; ">$550/person&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View Details></button>
-<div class="box5">
-</div>
-<p style="font-family:arial; font-size:15px; margin-left:475px; color:black">Thailand</p>
-<p style="font-family:arial; font-size:20px; margin-left:475px; font-weight:bold; color:brown">Thailand</p>
-<p style="font-family:arial; font-size:15px; margin-left:475px; color:black">Land of Smiles</p>
-<button type="button" style="margin-left:455px; border-radius:15px; font-size:25px; padding: 10px 20px; color:white; background-color:teal; ">$550/person&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View Details></button>
-<div class="box6">
-</div>
-<p style="font-family:arial; font-size:15px; margin-left:890px; color:black">Dubai</p>
-<p style="font-family:arial; font-size:20px; margin-left:890px; font-weight:bold; color:brown">Dubai</p>
-<p style="font-family:arial; font-size:15px; margin-left:890px; color:black">Gulf Tiger, Pearl of the Gulf and Jewel of the World</p>
-<button type="button" style="margin-left:870px; border-radius:15px; font-size:25px; padding: 10px 20px; color:white; background-color:teal; ">$550/person&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View Details></button>
-<div class="box7">
-</div>
-<p style="font-family:arial; font-size:15px; margin-left:50px; color:black">Goa, India</p>
-<p style="font-family:arial; font-size:20px; margin-left:50px; font-weight:bold; color:brown">Goa</p>
-<p style="font-family:arial; font-size:15px; margin-left:50px; color:black">Miami of India and India's Party Capital</p>
-<button type="button" style="margin-left:40px; border-radius:15px; font-size:25px; padding: 10px 20px; color:white; background-color:teal; ">$550/person&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View Details></button>
-<div class="box8">
-</div>
-<p style="font-family:arial; font-size:15px; margin-left:475px; color:black">France</p>
-<p style="font-family:arial; font-size:20px; margin-left:475px; font-weight:bold; color:brown">France</p>
-<p style="font-family:arial; font-size:15px; margin-left:475px; color:black">The French Republic and The Hexagon</p>
-<button type="button" style="margin-left:455px; border-radius:15px; font-size:25px; padding: 10px 20px; color:white; background-color:teal; ">$550/person&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View Details></button>
-<div class="box9">
-</div>
-<p style="font-family:arial; font-size:15px; margin-left:890px; color:black">Spain</p>
-<p style="font-family:arial; font-size:20px; margin-left:890px; font-weight:bold; color:brown">Spain</p>
-<p style="font-family:arial; font-size:15px; margin-left:890px; color:black">Kingdom of Spain</p>
-<button type="button" style="margin-left:870px; border-radius:15px; font-size:25px; padding: 10px 20px; color:white; background-color:teal; ">$550/person&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View Details></button>
+
 </body>
 </html>
