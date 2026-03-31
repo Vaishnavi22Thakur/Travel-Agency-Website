@@ -1,134 +1,206 @@
+<!DOCTYPE html>
 <html>
 <head>
-<script language="Javascript">
+<title>Booking</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Poppins, sans-serif;
+}
+
+body{
+  background:url("images/port.jpg") no-repeat center/cover;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+
+/* OUTER BOX */
+.box{
+  width:100%;
+  max-width:900px;
+  background:url("images/book.jpg") no-repeat center/cover;
+  border-radius:20px;
+  padding:30px 20px;
+  display:flex;
+  justify-content:center;
+}
+
+/* FORM CONTAINER */
+.head{
+  width:100%;
+  max-width:500px;
+  backdrop-filter:blur(20px);
+  background:rgba(255,255,255,0.2);
+  border-radius:15px;
+  padding:25px;
+}
+
+/* HEADINGS */
+h1, h3{
+  text-align:center;
+  margin-bottom:10px;
+}
+
+/* FORM ROW */
+.row{
+  display:flex;
+  flex-direction:column;
+  margin-bottom:15px;
+}
+
+/* LABEL */
+label{
+  margin-bottom:5px;
+  font-weight:500;
+}
+
+/* INPUTS */
+input, select{
+  width:100%;
+  padding:10px;
+  border-radius:8px;
+  border:none;
+  outline:none;
+}
+
+/* BUTTON */
+button{
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:10px;
+  font-size:16px;
+  background:white;
+  color:purple;
+  cursor:pointer;
+  margin-top:10px;
+}
+
+button:hover{
+  background:purple;
+  color:white;
+}
+
+/* RESPONSIVE */
+@media(min-width:768px){
+  .row-inline{
+    display:flex;
+    gap:10px;
+  }
+
+  .row-inline > div{
+    flex:1;
+  }
+}
+</style>
+
+<script>
 function booking(){
-    var FullName,Email,Phoneno,People,TravelDate,Destination,Gender;
-    FullName=document.book.bname.value;
-    Email=document.book.bemail.value;
-    Phoneno=document.book.bnum.value;
-    People=document.book.btravellers.value;
-    TravelDate=document.book.btravel.value;
-    Destination=document.book.bdestination.value;
-    Gender=document.book.bgender.value;
-    if(FullName=="" || Email=="" || Phoneno=="" || People=="" || TravelDate=="" || Destination=="" || Gender==""){
+    const FullName = document.forms["book"]["bname"].value.trim();
+    const Email = document.forms["book"]["bemail"].value.trim();
+    const Phoneno = document.forms["book"]["bnum"].value.trim();
+    const People = document.forms["book"]["btravellers"].value.trim();
+    const TravelDate = document.forms["book"]["btravel"].value.trim();
+    const Destination = document.forms["book"]["bdestination"].value.trim();
+    const Gender = document.forms["book"]["bgender"].value;
+
+    if(!FullName || !Email || !Phoneno || !People || !TravelDate || !Destination || !Gender){
         alert("Enter all the fields");
         return false;
     }
+
     if(isNaN(Phoneno)){
         alert("Enter mobile number in numbers only");
         return false;
     }
-    if(Phoneno.length!=10){
+
+    if(Phoneno.length !== 10){
         alert("Enter 10 digit mobile number");
         return false;
     }
-    alert("Congratulations! Your trip has been booked.");
+
+    alert("🎉 Booking successful! Enjoy your trip.");
+    window.location.href = "index.html";
     return true;
 }
 </script>
-<style>
-body{
-background-image:url("images/port.jpg");
-background-size:cover;
-background-repeat:no-repeat;
-display:flex;
-justify-content:center;
-align-items:flex-start;;
-padding:30px 50px;
-}
-.head{
-border:2px solid black;
-border-radius:15px;
-width:50%;
-height:100%;
-text-align:center;
-font-family:poppins;
-backdrop-filter:blur(20px);
-padding:30px 40px;
-}
-.box{
-background-image:url("images/book.jpg");
-background-size:cover;
-background-repeat:no-repeat;
-display:flex;
-justify-content:center;
-align-items:center;
-border:0px white;
-border-radius:20px;
-width:1250px;
-height:auto;
-}
-input, select {
-    display:block;
-    margin:8px auto;
-}
-.row {
-display: flex;
-justify-content: space-between;
-align-items:center;
-width:70%;
-margin:10px auto;
-}
-.row label,
-.row select{
-width:55%;
-text-align: left;
-font-size:18px;
-font-weight:500;
-}
-.row label{
-width:40%;
-padding:5px;
-border-radius:5px;
-border:1px solid #555;
-}
-</style>
+
 </head>
+
 <body>
+
 <div class="box">
-    <div class="head">
-        <h1>WELCOME!</h1>
-        <h3>Please fill the following details for your booking</h3>
-            <form name="book">
-            <div class="row">
-        	<label>Full name:</label>
-        	<input type="text" name="bname">
-    	    </div>
-    	<div class="row">
-            <label>E-mail:</label>
-            <input type="email" name="bemail">
-    	</div>
-    	<div class="row">
-            <label>Phone No:</label>
-            <input type="text" name="bnum">
-    	</div>
-        <div class="row">
-    	    <label>Gender:</label>
-    	    <select name="bgender"><option>Male</option><option>Female</option><option>Others</option></select>
-        </div>
-    	<div class="row">
-            <label>Destination:</label>
-            <input type="text" name="bdestination">
-    	</div>
-        <div class="row">
-            <label>No. of People:</label>
-            <input type="text" name="btravellers">
-        </div>
-        <div class="row">
-            <label>Travel Date:</label>
-            <input type="date" name="btravel">
-        </div>
-        <div class="row">
-            <label>Payment Method:</label>
-            <select>
-                <option>UPI</option>
-                <option>Debit Card</option>
-                <option>Credit Card</option>
-                <option>Net Banking</option><br>
-            </select><br>
-        </div>
-        <input type="button" value="BOOK" onclick="if(booking())window.location.href='index.html'" style="font-weight:bold; color:purple; background-color:white; border-radius:10px; font-size:20px; width:25%; height:10%"; name="booked"></form>
-    </div>
+  <div class="head">
+
+    <h1>WELCOME!</h1>
+    <h3>Please fill the details</h3>
+
+    <form name="book" onsubmit="return booking()">
+
+      <div class="row">
+        <label>Full Name</label>
+        <input type="text" name="bname" placeholder="Enter your name">
+      </div>
+
+      <div class="row">
+        <label>Email</label>
+        <input type="email" name="bemail" placeholder="Enter your email">
+      </div>
+
+      <div class="row">
+        <label>Phone Number</label>
+        <input type="text" name="bnum" placeholder="Enter mobile number">
+      </div>
+
+      <div class="row">
+        <label>Gender</label>
+        <select name="bgender">
+          <option value="">Select</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Others</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <label>Destination</label>
+        <input type="text" name="bdestination" placeholder="Enter destination">
+      </div>
+
+      <div class="row">
+        <label>No. of People</label>
+        <input type="number" name="btravellers" placeholder="Enter number of travellers">
+      </div>
+
+      <div class="row">
+        <label>Travel Date</label>
+        <input type="date" name="btravel">
+      </div>
+
+      <div class="row">
+        <label>Payment Method</label>
+        <select>
+          <option>UPI</option>
+          <option>Debit Card</option>
+          <option>Credit Card</option>
+          <option>Net Banking</option>
+        </select>
+      </div>
+
+      <button type="submit">BOOK NOW</button>
+
+    </form>
+
+  </div>
 </div>
+
 </body>
-</html>    
+</html>
