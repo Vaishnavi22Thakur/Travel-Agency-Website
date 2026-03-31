@@ -1,123 +1,202 @@
+<!DOCTYPE html>
 <html>
 <head>
-<title>VAISHNAVI THAKUR
-       202501100200349
-       CSE-E
-</title>
+<title>Vaishnavi Thakur</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Poppins, sans-serif;
+}
+
 body{
-background-image:url("images/port.jpg");
-background-size:cover;
-background-repeat:no-repeat;
-margin-top:45px;
-margin-left:50px;
+  background:url("images/port.jpg") no-repeat center/cover;
 }
+       
 .box{
-border:0px white;
-border-radius:20px;
-background-image:url("images/travel.jpg");
-background-size:cover;
-background-repeat:no-repeat;
-width:1250px;
-height:550px;
-display:flex;
-justify-content:center;
-align-items:center;
+  background:url("images/travel.jpg") no-repeat center/cover;
+  min-height:90vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+  text-align:center;
+  padding:20px;
 }
-a:link{color:brown}
-.design{
-font-family:poppins;
-font-size:60px;
-text-align:center;
-margin-left:60px;
-margin-top:-125px;
-}
+
 .button{
-display:flex;
-gap:30px;
-position:absolute;
-top:75px;
-right:100px;
-font-size:17px;
+  position:absolute;
+  top:20px;
+  right:20px;
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
 }
+
 .button a{
-border:0px white;
-border-radius:15px;
-width:150px;
-height:35px;
-background:white;
-display:flex;
-justify-content:center;
-align-items:center;
+  text-decoration:none;
+  background:white;
+  padding:8px 15px;
+  border-radius:10px;
+  font-size:14px;
+  color:brown;
 }
-.box1{
-background-image:url("images/bali.jpg");
-background-size:cover;
-background-repeat:no-repeat;
-margin-top:50px;
-width:375px;
-height:250px;
-border:0px white;
-border-radius:20px;
-margin-left:30px;
+
+.design{
+  font-size:50px;
+  color:black;
 }
-.box2{
-background-image:url("images/rome.jpg");
-background-size:cover;
-background-repeat:no-repeat;
-margin-top:-430px;
-width:375px;
-height:250px;
-border:0px white;
-border-radius:20px;
-margin-left:450px;
+
+.section-title{
+  font-size:30px;
+  font-weight:bold;
+  margin:40px 20px;
 }
-.box3{
-background-image:url("images/kerala.jpg");
-background-size:cover;
-background-repeat:no-repeat;
-margin-top:-430px;
-width:370px;
-height:250px;
-border:0px white;
-border-radius:20px;
-margin-left:870px;
+       
+.cards{
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  gap:20px;
+  padding:20px;
+}
+
+.card{
+  background:white;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.card-img{
+  height:200px;
+  background-size:cover;
+  background-position:center;
+}
+
+.card-content{
+  padding:15px;
+}
+
+.card-content h3{
+  color:brown;
+}
+
+.card-content p{
+  font-size:14px;
+}
+
+.price-btn{
+  margin-top:10px;
+  background:teal;
+  color:white;
+  border:none;
+  padding:10px;
+  width:100%;
+  border-radius:10px;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.contact{
+  padding:40px 20px;
+}
+
+@media(max-width:1024px){
+  .cards{
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media(max-width:768px){
+  .design{
+    font-size:32px;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+  .button{
+    justify-content:center;
+    right:0;
+    left:0;
+  }
 }
 </style>
 </head>
+
 <body>
+
 <div class="box">
-    <div class="button">
-        <a href="destinations.html">DESTINATIONS</a>
-        <a href="book.html">BOOK NOW</a>
-        <a href="login1.html">LOGIN</a>
-        <a href="sign.html">SIGN UP</a>
+  <div class="button">
+    <a href="destinations.html">DESTINATIONS</a>
+    <a href="book.html">BOOK NOW</a>
+    <a href="login1.html">LOGIN</a>
+    <a href="sign.html">SIGN UP</a>
+  </div>
+
+  <h1 class="design">Dream High<br>Explore The World</h1>
+</div>
+
+<h2 class="section-title">Special For You</h2>
+
+<div class="cards">
+
+  <div class="card">
+    <div class="card-img" style="background-image:url('images/bali.jpg')"></div>
+    <div class="card-content">
+      <p>Bali, Indonesia</p>
+      <h3>Bali</h3>
+      <p>Island of Gods</p>
+      <button class="price-btn">$500/person - View Details</button>
     </div>
-    <h1 class="design">Dream High<br>Explore The World</h1>
+  </div>
+
+  <div class="card">
+    <div class="card-img" style="background-image:url('images/rome.jpg')"></div>
+    <div class="card-content">
+      <p>Rome, Italy</p>
+      <h3>Rome</h3>
+      <p>Capital of Italy</p>
+      <button class="price-btn">$600/person - View Details</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-img" style="background-image:url('images/kerala.jpg')"></div>
+    <div class="card-content">
+      <p>Kerala, India</p>
+      <h3>Kerala</h3>
+      <p>God's Own Country</p>
+      <button class="price-btn">$550/person - View Details</button>
+    </div>
+  </div>
+
 </div>
-<p style="font-family:poppins; font-size:40px; margin-left:30px; font-weight:bold">Special For You</p>
-<div class="box1">
+
+<!-- CONTACT -->
+<div class="contact">
+  <h2>Contact Us</h2>
+
+  <p><b>Email:</b></p>
+  <p>
+    info@dreamhightravels.in<br>
+    support@dreamhighholidays.in<br>
+    booking@dreamhighjourneys.in
+  </p>
+
+  <p><b>Phone:</b></p>
+  <p>
+    +91 00000 12345<br>
+    +91 99999 00000<br>
+    +91 00000 98765
+  </p>
 </div>
-<p style="font-family:arial; font-size:15px; margin-left:50px; color:black">Bali, Indonesia</p>
-<p style="font-family:arial; font-size:20px; margin-left:50px; font-weight:bold; color:brown">Bali</p>
-<p style="font-family:arial; font-size:15px; margin-left:50px; color:black">Island of Gods</p>
-<button type="button" style="margin-left:40px; border-radius:15px; font-size:25px; padding: 10px 20px; color:white; background-color:teal;">$500/person&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View Details></button>
-<div class="box2">
-</div>
-<p style="font-family:arial; font-size:15px; margin-left:475px; color:black">Rome, Italy</p>
-<p style="font-family:arial; font-size:20px; margin-left:475px; font-weight:bold; color:brown">Rome</p>
-<p style="font-family:arial; font-size:15px; margin-left:475px; color:black">Capital and Largest City of Italy</p>
-<button type="button" style="margin-left:455px; border-radius:15px; font-size:25px; padding: 10px 20px; color:white; background-color:teal;">$600/person&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View Details></button>
-<div class="box3">
-</div>
-<p style="font-family:arial; font-size:15px; margin-left:890px; color:black">Kerala, India</p>
-<p style="font-family:arial; font-size:20px; margin-left:890px; font-weight:bold; color:brown">Kerala</p>
-<p style="font-family:arial; font-size:15px; margin-left:890px; color:black">God's Own Country and Spice Garden of India</p>
-<button type="button" style="margin-left:870px; border-radius:15px; font-size:25px; padding: 10px 20px; color:white; background-color:teal; ">$550/person&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View Details></button>
-<h1 style="font-family:poppins; margin-left:45px; font-size:30px; margin-top:75px">Contact Us</h1>
-<p style="font-family:poppins; font-weight:bold; margin-left:50px; font-size:20px">E-mail-</p>
-<p style="font-weight:bold; margin-left:50px; font-size:20px">info@dreamhightravels.in<br>support@dreamhighholidays.in<br>booking@dreammhighjourneys.in<br></p>
-<p style="font-family:poppins; font-weight:bold; margin-left:50px; font-size:20px">Phone no.-</p>
-<p style="font-weight:bold; margin-left:50px; font-size:20px">+91 00000 12345<br>+91 99999 00000<br>+91 00000 98765<br></p>
+
 </body>
 </html>
