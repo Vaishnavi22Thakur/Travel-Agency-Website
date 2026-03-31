@@ -1,73 +1,155 @@
+<!DOCTYPE html>
 <html>
 <head>
-<script language="Javascript">
+<title>Sign Up</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Poppins, sans-serif;
+}
+
+body{
+  background:url("images/port.jpg") no-repeat center/cover;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+    
+.box{
+  width:90%;
+  max-width:900px;
+  background:url("images/sign.jpg") no-repeat center/cover;
+  border-radius:20px;
+  padding:40px 20px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.box1{
+  width:100%;
+  max-width:350px;
+  padding:30px;
+  border-radius:15px;
+  backdrop-filter:blur(20px);
+  background:rgba(255,255,255,0.2);
+}
+
+h1{
+  text-align:center;
+  margin-bottom:20px;
+}
+input{
+  width:100%;
+  padding:10px;
+  margin-top:5px;
+  margin-bottom:15px;
+  border-radius:8px;
+  border:none;
+  outline:none;
+}
+
+button{
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:10px;
+  font-size:16px;
+  background:white;
+  color:purple;
+  cursor:pointer;
+}
+
+button:hover{
+  background:purple;
+  color:white;
+}
+
+p{
+  text-align:center;
+  margin-top:15px;
+}
+
+a{
+  color:blue;
+  text-decoration:none;
+}
+
+@media(max-width:600px){
+  .box{
+    padding:20px;
+  }
+}
+</style>
+
+<script>
 function sign(){
-    var email,name,number,pass,count;
-    number=document.signup.number.value;
-    email=document.signup.email.value;
-    name=document.signup.name.value;
-    pass=document.signup.pass.value;
-    if(email=="" || name=="" || pass=="" || number==""){
+    const name = document.forms["signup"]["name"].value.trim();
+    const email = document.forms["signup"]["email"].value.trim();
+    const pass = document.forms["signup"]["pass"].value.trim();
+    const number = document.forms["signup"]["number"].value.trim();
+
+    if(!name || !email || !pass || !number){
         alert("Enter all the fields");
         return false;
     }
+
     if(isNaN(number)){
         alert("Enter mobile number in numbers only");
         return false;
     }
-    if(number.length!=10){
+
+    if(number.length !== 10){
         alert("Enter 10 digit mobile number");
         return false;
     }
-    alert("You have successfully signed up. You can login in now.");
+
+    alert("Signup successful! You can login now.");
+    window.location.href = "login1.html";
     return true;
 }
 </script>
-<style>
-body{
-background-image:url("images/port.jpg");
-background-size:cover;
-background-repeat:no-repeat;
-display:flex;
-justify-content:center;
-align-items:center;
-}
-a:link{color:navyblue}
-.box{
-background-image:url("images/sign.jpg");
-background-size:cover;
-background-repeat:no-repeat;
-display:flex;
-justify-content:center;
-align-items:center;
-border:0px white;
-border-radius:20px;
-width:1250px;
-height:550px;
-}
-.box1{
-border:2px solid black;
-border-radius:15px;
-width:35%;
-height:65%;
-backdrop-filter:blur(25px);             
-}
-</style>
+
 </head>
+
 <body>
+
 <div class="box">
-    <div class="box1">
-        <h1 style="text-align:center">SIGN UP</h1><br>
-        <form name="signup" style="text-align:center">
-        Name:<input type="text" name="name" style="font-size:15px;"><br><br>
-        E-mail:<input type="email" name="email" style="font-size:15px"><br><br>
-        Password:<input type="password" name="pass" style="font-size:15px"><br><br>
-        Mobile No.:<input type="text" name="number" style="font-size:15px"><br><br>
-        <button type="button" onclick="if(sign()) window.location.href='index.html'" style="border-radius:10px; font-size:20px; color:purple; background-color:white">Submit</button><br>
-        <p style="font-size:20px; font-weight:bold">Already have an account?&nbsp;
-        <a href="login1.html" style="text-align:center;">Login</a></p>
-        </form>
-    </div>
+  <div class="box1">
+
+    <h1>SIGN UP</h1>
+
+    <form name="signup" onsubmit="return sign()">
+
+      Name:
+      <input type="text" name="name">
+
+      E-mail:
+      <input type="email" name="email">
+
+      Password:
+      <input type="password" name="pass">
+
+      Mobile No:
+      <input type="text" name="number">
+
+      <button type="submit">Submit</button>
+
+      <p>
+        Already have an account?
+        <a href="login1.html">Login</a>
+      </p>
+
+    </form>
+
+  </div>
 </div>
+
 </body>
 </html>
